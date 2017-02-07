@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexthx = /^\/thxjeeves/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/; botRegexweek = /^\/games/; botRegexthx = /^\/thxjeeves/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
@@ -23,6 +23,11 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
+  else if(request.text && botRegexweek.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://www.daddyleagues.com/tfl17/schedules");
+    this.res.end();
+} 
   else if(request.text && botRegexthx.test(request.text)) {
     this.res.writeHead(200);
     postMessage("https://68.media.tumblr.com/6bb5c2117f947747b09c6d5342d847a0/tumblr_ntlscqAZJp1uqe8iio1_500.gif");
