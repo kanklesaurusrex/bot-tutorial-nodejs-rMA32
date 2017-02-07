@@ -6,7 +6,7 @@ var botID = process.env.BOT_ID;
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
       botRegex = /^\/cool guy/; botRegexDDL = /^\/DDL/i; botRegexsloth = /^\/sloth/; botRegexthx = /^\/thanksjeeves/; botRegexDL = /^\/DL/; botRegexRules = /^\/rules/;
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSlut = /^\/slut/; botRegexStop = /^\/stop/; botRegexSch = /^\/TFL/i; botRegexweek = /^\/games/;
+      botRegexP = /^\/PDL/i;  tRegexTw = /^\/twitch/i; botRegexSlut = /^\/slut/; botRegexStop = /^\/stop/; botRegexSch = /^\/TFL/i; botRegexweek = /^\/games/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -55,7 +55,7 @@ function respond() {
   }
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/tfl17/");
+    postMessage("http://daddyleagues.com/tfl17");
     this.res.end();
   } 
   else if(request.text && botRegexRules.test(request.text)) {
@@ -71,8 +71,7 @@ function respond() {
     
     this.res.end();
   } 
-  
-  else if(request.text && botRegexSiege.test(request.text)) {
+    else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
     if(0.6 >= Math.random() > 0.3)
       postMessage(siege1);
