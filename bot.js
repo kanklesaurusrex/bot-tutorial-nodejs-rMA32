@@ -17,11 +17,6 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
-    else if(request.text && botRegexDL.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/TFL17/;
-    this.res.end();
-  } 
    else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
