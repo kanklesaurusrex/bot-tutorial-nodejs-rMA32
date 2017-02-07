@@ -5,7 +5,7 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
+      botRegex = /^\/cool guy/; botRegexthx = /^\/thxjeeves/;  botRegexDL = /^\/DDL/i;botRegexSalt = /^\/salt/;botRegexRules = /^\/rules/
       botRegexAd=/^\/advance/;botRegexGTA = /^\/gta/; botRegexSC = /^\/SDL/i; botODB = /(.*\s+)(.*odb)(\s+.*)/i; botDuck = /^\/duck/;
       botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSb = /^\/sub/; botRegexSh = /^\/shrug/; botRegexWk = /^\/users/; botRegexCC = /^\/cc/;
       botRegexSiege = /^\/siege/; botRegexOW = /^\/ratings/; 
@@ -23,9 +23,14 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
+  else if(request.text && botRegexthx.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("https://68.media.tumblr.com/6bb5c2117f947747b09c6d5342d847a0/tumblr_ntlscqAZJp1uqe8iio1_500.gif");
+    this.res.end();
+  } 
   else if(request.text && botRegexSlut.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://i.groupme.com/640x364.jpeg.f8a0e216bf7e42ed9a86b3ae23cc2ff1.large");
+    postMessage("https://media.tenor.co/images/75b50280531d7b9482a47b45960f4dc0/raw");
     this.res.end();
   } 
   else if(request.text && botRegexStop.test(request.text)) {
