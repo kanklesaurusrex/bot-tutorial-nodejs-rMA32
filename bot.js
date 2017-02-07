@@ -24,7 +24,7 @@ function respond() {
   } 
   else if(request.text && botRegexSch.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/tfl17/team/"+teamab.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/tfl17/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   } 
   else if(request.text && botRegexsloth.test(request.text)) {
@@ -55,12 +55,6 @@ function respond() {
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://daddyleagues.com/tfl17/rules");
-    this.res.end();
-  }
-  else if(request.text && botRegexSC.test(request.text)) {
-    this.res.writeHead(200);
-    
-    postMessage("http://daddyleagues.com/tfl17/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
