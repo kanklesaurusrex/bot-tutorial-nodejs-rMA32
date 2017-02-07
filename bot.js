@@ -5,8 +5,8 @@ var botID = process.env.BOT_ID;
 
 function respond() {
   var request = JSON.parse(this.req.chunks[0]),
-      botRegex = /^\/cool guy/; botRegexsloth = /^\/sloth/; botRegexthx = /^\/thanksjeeves/; botRegexDL = /^\/DDL/i;botRegexRules = /^\/rules/
-      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSlut = /^\/slut/; botRegexStop = /^\/stop/; botRegexSch = /^\/Schedule/i; botRegexweek = /^\/games/;
+      botRegex = /^\/cool guy/; botRegexDL = /^\/DDL/i; botRegexsloth = /^\/sloth/; botRegexthx = /^\/thanksjeeves/; botRegexDL = /^\/DDL/; botRegexRules = /^\/rules/
+      botRegexP = /^\/PDL/i;  botRegexTw = /^\/twitch/i; botRegexSlut = /^\/slut/; botRegexStop = /^\/stop/; botRegexSch = /^\/TFL/i; botRegexweek = /^\/games/;
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
@@ -17,6 +17,17 @@ function respond() {
     postMessage(cool());
     this.res.end();
   }
+    else if(request.text && botRegexDL.test(request.text)) {
+    this.res.writeHead(200);
+    postMessage("http://daddyleagues.com/TFL17/;
+    this.res.end();
+  } 
+   else if(request.text && botRegexDL.test(request.text)) {
+    this.res.writeHead(200);
+    //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
+    postMessage("http://daddyleagues.com/TFL17/team/"+request.text.substring(5,8)+"/depthchart");
+    this.res.end();
+  } 
     else if(request.text && botRegexweek.test(request.text)) {
     this.res.writeHead(200);
     postMessage("http://www.daddyleagues.com/tfl17/schedules");
@@ -24,7 +35,7 @@ function respond() {
   } 
   else if(request.text && botRegexSch.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("http://daddyleagues.com/tfl17/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://www.daddyleagues.com/TFL17/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   } 
   else if(request.text && botRegexsloth.test(request.text)) {
