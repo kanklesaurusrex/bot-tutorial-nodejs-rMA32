@@ -40,7 +40,7 @@ function respond() {
   } 
   else if(request.text && botRegexStop.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("being a cunt");
+    postMessage("Stop being a cunt");
     this.res.end();
   } 
   else if(request.text && botRegexProp.test(request.text)) {
